@@ -8,7 +8,11 @@ import Footer from "./components/footer";
 import { ThemeProvider } from "./components/theme-switch";
 import { metaData } from "./lib/config";
 
-const inter = Inter({ subsets: ["latin"] });
+// Load font outside component
+const inter = Inter({
+  subsets: ["latin"],
+  display: 'swap', // Ensure text remains visible during webfont load
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(metaData.baseUrl),
@@ -44,51 +48,40 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  alternates: {
+    types: {
+      'application/rss+xml': '/rss.xml',
+      'application/atom+xml': '/atom.xml',
+      'application/feed+json': '/feed.json',
+    },
+  },
 };
 
 export default function RootLayout({
-  children,
-}: {
+                                     children,
+                                   }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.className}`}>
-      <head>
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          href="/rss.xml"
-          title="RSS Feed"
-        />
-        <link
-          rel="alternate"
-          type="application/atom+xml"
-          href="/atom.xml"
-          title="Atom Feed"
-        />
-        <link
-          rel="alternate"
-          type="application/feed+json"
-          href="/feed.json"
-          title="JSON Feed"
-        />
-      </head>
-      <body className="antialiased flex flex-col items-center justify-center mx-auto mt-2 lg:mt-8 mb-12">
-        <ThemeProvider
+      <html lang="en" className={inter.className} suppressHydrationWarning>
+      <body className="antialiased flex flex-col items-center justify-center mx-auto mt-2 lg:mt-8 mb-12" suppressHydrationWarning>
+      <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-        >
-          <main className="flex-auto min-w-0 mt-2 md:mt-6 flex flex-col px-6 sm:px-4 md:px-0 max-w-[624px] w-full">
+      >
+        <div className="flex flex-col min-h-screen w-full">
+          <main className="flex-auto min-w-0 mt-2 md:mt-6 flex flex-col px-6 sm:px-4 md:px-0 max-w-[624px] w-full mx-auto">
             <Navbar />
             {children}
             <Footer />
-            <Analytics />
-            <SpeedInsights />
           </main>
-        </ThemeProvider>
+          <Analytics />
+          <SpeedInsights />
+        </div>
+      </ThemeProvider>
       </body>
-    </html>
+      </html>
   );
 }

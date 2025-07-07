@@ -15,43 +15,24 @@ export default function Page() {
           priority
         />
       </a>
-      <h1 className="mb-8 text-2xl font-medium">Portfolio template!</h1>
+      <h1 className="mb-8 text-2xl font-medium">Axelo Matthew Terang Barus</h1>
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          A clean, fast, and lightweight portfolio template built with Next.js,
-          Vercel, and Tailwind CSS.
+         Business information system || Tech enthusiast || fullstack developer
         </p>
         <p>
-          Nextfolio has everything you need for a portfolio: MDX blog, SEO, RSS,
-          Atom & JSON feeds, analytics, Tweet & YouTube embeds, KaTeX and {""}
-          <a
-            target="_blank"
-            href="https://github.com/1msirius/Nextfolio?tab=readme-ov-file#features"
-          >
-            more
-          </a>
-          .
+          I love coding , but the most interesting thing about coding is how to make it useful for people. So I like to
+          make things that people can use and enjoy.
         </p>
         <p>
-          Nextfolio is{" "}
-          <a href={socialLinks.github} target="_blank">
-            open-source
+          Im also a big fan of astronomy and astrology. So i build my own website to share my knowledge about astronomy and astrology.
+          Name is Astroz.
+          <a href="#">
+           Visit here
           </a>{" "}
-          and fully customizable, making it easy to add more features.
         </p>
         <p>
-          <a
-            href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F1msirius%2FNextfolio"
-            target="_blank"
-          >
-            Deploy
-          </a>{" "}
-          your Nextfolio site with Vercel in minutes and follow the set up
-          instructions in the{" "}
-          <a href="/blog/getting-started">Getting Started</a> post.
-        </p>
-        <p>
-          Built and maintained by{" "}
+          This website are inspired  by{" "}
           <a href="https://imsirius.xyz/" target="_blank">
             Sirius
           </a>
