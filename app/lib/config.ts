@@ -11,6 +11,6 @@ export const socialLinks = {
   twitter: "https://x.com/XhunterX330924",
   github: "https://github.com/AxelMatthew12",
   instagram: "https://www.instagram.com/axmtb.nah/",
-  linkedin: "https://www.linkedin.com/",
+  linkedin: "https://www.linkedin.com/in/axelo-matthew-barus/",
   email: "axelomatthew.terang@gmail.com",
 };
